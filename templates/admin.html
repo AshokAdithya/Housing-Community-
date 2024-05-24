@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="../static/images/appartment.svg"
+      type="image/x-icon"
+    />
+    <title>Admin Page</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/admin.css') }}"
+    />
+  </head>
+  <body>
+    <div class="outer-div">
+      <h1>Welcome Admin, You can edit and remove residents.</h1>
+      <div class="inner-div">
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Flat No</th>
+              <th>Resident Name</th>
+              <th>Resident Number</th>
+              <th>Resident Email Address</th>
+              <th>Owner Name</th>
+              <th>Owner Number</th>
+              <th>BHK</th>
+              <th>No. of. Residents</th>
+              <th>No. of. Pets</th>
+              <th>No. of. Vehicles</th>
+              <th>Maintainance Fee</th>
+              <th>Payement Status</th>
+              <th>Edit or Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <td>{{loop.index}}</td>
+              <td>{{user["details"]["flat_no"]}}</td>
+              <td>{{user["details"]["resident_name"]}}</td>
+              <td>{{user["details"]["resident_number"]}}</td>
+              <td>{{user["details"]["email_address"]}}</td>
+              <td>{{user["details"]["owner_name"]}}</td>
+              <td>{{user["details"]["owner_number"]}}</td>
+              <td>{{user["details"]["BHK"]}}</td>
+              <td>{{user["details"]["no_of_residents"]}}</td>
+              <td>{{user["details"]["no_of_pets"]}}</td>
+              <td>{{user["details"]["no_of_vehicles"]}}</td>
+              <td>{{user["details"]["maintenance_fee"]}}</td>
+              <td>{{user["details"]["payment_status"]}}</td>
+              <td>
+                <a
+                  href="{{url_for('edit_user',username=user['details']['flat_no'])}}"
+                  ><button class="button" onclick="openModal()">
+                    Edit or Remove
+                  </button></a
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="add-user">
+        <a href="{{url_for('add_flats')}}"
+          ><button class="add-user-button" onclick="openModal()">
+            Add Flats
+          </button></a
+        >
+      </div>
+      <div class="logout">
+        <a href="{{url_for('logout')}}"
+          ><button class="button-logout">Logout</button></a
+        >
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="../static/images/appartment.svg"
+      type="image/x-icon"
+    />
+    <title>Edit User Details</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/editUser.css') }}"
+    />
+  </head>
+  <body>
+    <div class="outer-div">
+      <h1>Edit User Details</h1>
+      <form
+        class="inner-div"
+        action="{{ url_for('edit_user', username=username) }}"
+        method="POST"
+      >
+        <div class="input-group">
+          <label for="flat_no">Flat No:</label>
+          <input
+            type="text"
+            id="flat_no"
+            name="flat_no"
+            value="{{user_details['details']['flat_no']}}"
+            readonly
+          />
+        </div>
+        <div class="input-group">
+          <label for="bhk">BHK:</label>
+          <input
+            type="text"
+            id="bhk"
+            name="bhk"
+            value="{{user_details['details']['BHK']}}"
+            readonly
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="owner_name">Owner Name:</label>
+          <input
+            type="text"
+            id="owner_name"
+            name="owner_name"
+            value="{{ user_details['details']['owner_name'] }}"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="owner_contact">Owner Contact:</label>
+          <input
+            type="tel"
+            id="owner_contact"
+            name="owner_contact"
+            value="{{ user_details['details']['owner_number'] }}"
+            required
+            pattern="[0-9]+"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Change Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value="{{ user_details['password'] }}"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="resident_name">Resident Name:</label>
+          <input
+            type="text"
+            id="resident_name"
+            name="resident_name"
+            value="{{ user_details['details']['resident_name'] }}"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="resident_contact">Resident Contact:</label>
+          <input
+            type="tel"
+            id="resident_contact"
+            name="resident_contact"
+            value="{{ user_details['details']['resident_number'] }}"
+            required
+            pattern="[0-9]+"
+          />
+        </div>
+        <div class="input-group">
+          <label for="email_address">Resident Email Address:</label>
+          <input
+            type="email"
+            id="email_address"
+            name="email_address"
+            value="{{ user_details['details']['email_address'] }}"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="residents">No of Residents:</label>
+          <input
+            type="number"
+            id="residents"
+            name="residents"
+            value="{{ user_details['details']['no_of_residents'] }}"
+            required
+            min="0"
+            max="10"
+          />
+        </div>
+        <div class="input-group">
+          <label for="status">Status:</label>
+          <input
+            type="text"
+            id="status"
+            name="status"
+            value="{{ user_details['details']['status'] }}"
+            readonly
+          />
+        </div>
+        <div class="input-group">
+          <label for="vehicles">No of Vehicles:</label>
+          <input
+            type="number"
+            id="vehicles"
+            name="vehicles"
+            value="{{ user_details['details']['no_of_vehicles'] }}"
+            required
+            min="0"
+            max="10"
+          />
+        </div>
+        <div class="input-group">
+          <label for="pets">No of Pets:</label>
+          <input
+            type="number"
+            id="pets"
+            name="pets"
+            value="{{ user_details['details']['no_of_pets'] }}"
+            required
+            min="0"
+            max="10"
+          />
+        </div>
+        <div class="input-group">
+          <label for="payment">Payment Status:</label>
+          <input type="checkbox" id="payment_status" name="payment_status" {% if
+          user_details["details"]["payment_status"] == "Paid" %}checked{% endif
+          %} />
+        </div>
+        <div class="button-group-1">
+          <input type="hidden" name="action" value="edit" />
+          <input class="button" type="submit" value="Update" />
+        </div>
+      </form>
+      <form
+        action="{{ url_for('edit_user', username=username) }}"
+        method="POST"
+        style="margin-top: 20px"
+      >
+        <div class="button-group-2">
+          <input type="hidden" name="action" value="remove" />
+          <input class="button" type="submit" value="Remove Resident" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

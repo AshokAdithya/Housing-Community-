@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="../static/images/appartment.svg"
+      type="image/x-icon"
+    />
+    <title>Resident Page</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/resident.css') }}"
+    />
+  </head>
+  <body>
+    <div class="outer-div">
+      <h1>Welcome Back, {{user["resident_name"]}}</h1>
+      <div class="details">
+        <p><strong>Flat No:</strong> {{ user["flat_no"] }}</p>
+        <p><strong>Resident Name:</strong> {{ user["resident_name"] }}</p>
+        <p><strong>Resident Number:</strong> {{ user["resident_number"] }}</p>
+        <p>
+          <strong>Resident Email Address:</strong> {{ user["email_address"] }}
+        </p>
+        <p><strong>Owner Name:</strong> {{ user["owner_name"] }}</p>
+        <p><strong>Owner Number:</strong> {{ user["owner_number"] }}</p>
+        <p><strong>BHK:</strong> {{ user["BHK"] }}</p>
+        <p><strong>No. of Residents:</strong> {{ user["no_of_residents"] }}</p>
+      </div>
+      <div class="maintenance">
+        {% if user["payment_status"] == "Paid" %}
+        <p class="no-fee">No dues left.</p>
+        {% else %}
+        <p class="fee">
+          <strong>Maintenance Fee to be paid for the month:</strong>
+          {{ user["maintenance_fee"] }}
+        </p>
+        {% endif %}
+      </div>
+
+      <h1>Neighbours</h1>
+      <div class="table-div">
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Flat No</th>
+              <th>Resident Name</th>
+              <th>Resident Number</th>
+              <th>Resident Email Address</th>
+              <th>Owner Name</th>
+              <th>Owner Number</th>
+              <th>BHK</th>
+              <th>No. of. Residents</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <td>{{loop.index}}</td>
+              <td>{{user["details"]["flat_no"]}}</td>
+              <td>{{user["details"]["resident_name"]}}</td>
+              <td>{{user["details"]["resident_number"]}}</td>
+              <td>{{user["details"]["email_address"]}}</td>
+              <td>{{user["details"]["owner_name"]}}</td>
+              <td>{{user["details"]["owner_number"]}}</td>
+              <td>{{user["details"]["BHK"]}}</td>
+              <td>{{user["details"]["no_of_residents"]}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="complaint">
+        <a href="{{url_for('complaint',username=user['flat_no'])}}"
+          ><button class="button-complaint">Raise Complaint</button></a
+        >
+      </div>
+      <div class="logout">
+        <a href="{{url_for('logout')}}"
+          ><button class="button-logout">Logout</button></a
+        >
+      </div>
+    </div>
+  </body>
+</html>

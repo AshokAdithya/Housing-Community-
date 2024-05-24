@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="../static/images/appartment.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/homePage.css') }}"
+    />
+    <title>Akshaya Tango</title>
+  </head>
+  <body>
+    <div class="outer-div">
+      <h1 class="heading">Akshaya Tango</h1>
+      <h2 class="quote">
+        We are dedicated to creating a welcoming and well-maintained environment
+        where every resident feels at home.
+      </h2>
+      <div class="buttons">
+        <a href="{{url_for('login',role='admin')}}"
+          ><button class="button">Admin Login</button></a
+        >
+        <a href="{{url_for('login',role='resident')}}"
+          ><button class="button">Resident Login</button></a
+        >
+        <a href="{{url_for('guest')}}"
+          ><button class="button">Guest Login</button></a
+        >
+      </div>
+      <div class="details-button">
+        <button class="button-detail" onclick="openModal()">
+          Rent Details
+        </button>
+      </div>
+    </div>
+    <div class="overlay">
+      <div class="details-view">
+        <h2 class="details-h2">Apartment Details</h2>
+        <p class="details-p">Details about the apartment:</p>
+        <div class="details-rent">
+          <p>Per BHK : ₹4000</p>
+          <p>Per Vehicle : ₹100</p>
+          <p>Per Pet : ₹100</p>
+        </div>
+        <button onclick="closeModal()">
+          <span class="cross">&times;</span>
+        </button>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="../static/js/index.js"></script>
+  </body>
+</html>

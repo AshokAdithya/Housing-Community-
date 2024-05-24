@@ -1,0 +1,9 @@
+{
+  "admin": {
+    "password": "admin@1234",
+    "details": {
+      "name": "Nosferatu",
+      "number": "6379258841"
+    }
+  }
+}

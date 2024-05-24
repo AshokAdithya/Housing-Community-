@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="../static/images/appartment.svg"
+      type="image/x-icon"
+    />
+    <title>Guest Page</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/guest.css') }}"
+    />
+  </head>
+  <body>
+    <div class="outer-div">
+      <h1>Welcome, Guest!</h1>
+      <p>Here you can check the availability of houses:</p>
+      <div class="inner-div">
+        <table>
+          <thead>
+            <tr>
+              <th>Flat Number</th>
+              <th>Status</th>
+              <th>BHK</th>
+              <th>Rent</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for flat, details in house_status.items() %}
+            <tr>
+              <td>{{ flat }}</td>
+              <td>{{ details["status"] }}</td>
+              <td>{{details["BHK"]}}</td>
+              <td>{{details["maintenance_fee"]}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="contact">
+        <h2>
+          Address : Akshaya Tango, Old Mahabalipuram Road, Jothi Nagar,
+          Thuraipakkam, Chennai, Tamil Nadu - 600018
+        </h2>
+        <h2>Contact Details: +91 9432342342, +91 9182837465</h2>
+      </div>
+      <div class="contact-buttons">
+        <a href="https://wa.me/9363134967"
+          ><button class="whatsapp-button">Reach us on WhatsApp</button></a
+        >
+        <a href="tel:+919363134967"
+          ><button class="call-button">Call Us</button></a
+        >
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="../static/images/appartment.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login.css') }}"
+    />
+    <title>{{role.capitalize()}} Login</title>
+  </head>
+  <body>
+    <div class="outer-div">
+      <h1>{{role.capitalize()}} Login</h1>
+      <form
+        action="{{url_for('login',role=role)}}"
+        method="post"
+        class="form-login"
+      >
+        <label for="username" class="label">Username</label>
+        <input
+          type="text"
+          placeholder="Enter your username"
+          name="username"
+          id="username"
+          autocomplete="off"
+          required
+        />
+        <label for="password" class="label">Password</label>
+        <input
+          type="password"
+          placeholder="Enter your password"
+          name="password"
+          id="password"
+          required
+        />
+        <button class="button">Login</button>
+      </form>
+      {% if error %}
+      <h3 class="error">{{error}}</h3>
+      {% endif %}
+    </div>
+  </body>
+</html>
