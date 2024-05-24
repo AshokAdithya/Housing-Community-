@@ -59,7 +59,7 @@ def check_and_update_maintenance_fee():
     print("Maintenance fee update check triggered")
     today = date.today()
     
-    if today.day == 24:
+    if today.day == 1:
         print("Maintenance fee update condition met")
         
         for i, node in enumerate(user_table.table):   
@@ -94,8 +94,6 @@ def check_and_update_maintenance_fee():
         user_table.save_to_file('./static/data/user_table.json')
         house_table.save_to_file('./static/data/house_table.json')
         print("User and house tables saved to file")
-
-check_and_update_maintenance_fee()
 
 def send_mail(flat, name, email, subject, message):
     email_message = f"""
