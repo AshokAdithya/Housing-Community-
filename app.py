@@ -220,7 +220,7 @@ def edit_user(username):
             if new_resident!="NA":  
                 house_status="Unavailable"
                 if new_owner == new_resident:
-                    new_payment = "Unpaid" if payment_status != "on" else "Paid
+                    new_payment = "Unpaid" if payment_status != "on" else "Paid"
                     maintenance_fee=maintenance_fee_calculator(0,new_vehicles,new_pets)
                 else:
                     new_payment = "Unpaid" if payment_status != "on" else "Paid"
