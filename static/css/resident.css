@@ -108,3 +108,51 @@ th {
   font-weight: 600;
   cursor: pointer;
 }
+
+@media (max-width: 450px) {
+  .outer-div {
+    width: 85%;
+    border-radius: 30px;
+  }
+  h1 {
+    margin-top: 40px;
+    font-size: 30px;
+  }
+  p {
+    font-size: 16px;
+    text-align: start !important;
+  }
+  .fee,
+  .no-fee {
+    text-align: center !important;
+    font-size: 18px;
+  }
+  .complaint {
+    position: static;
+  }
+  .logout {
+    position: absolute;
+    top: 3%;
+    right: 8%;
+  }
+  .neighbour-heading {
+    margin-top: -50px !important;
+  }
+
+  .table-div {
+    width: 300px !important;
+    overflow-x: auto;
+    margin-bottom: 50px;
+  }
+
+  table {
+    width: auto;
+    height: auto;
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    padding: 5px;
+    font-size: 14px;
+  }
+}

@@ -89,3 +89,52 @@ input[type="checkbox"] {
   right: 50%;
   transform: translateX(50%);
 }
+
+@media (max-width: 450px) {
+  .outer-div {
+    width: 85%;
+    border-radius: 30px;
+  }
+  h1 {
+    margin-top: 20px;
+    font-size: 30px;
+  }
+  .inner-div {
+    overflow-x: hidden !important;
+  }
+
+  label {
+    font-size: 12px;
+  }
+  input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="password"] {
+    color: #eeeeee;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #00adb5;
+    background-color: #222831;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-left: 10px;
+    align-self: self-end !important;
+    width: 150px;
+  }
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+  .button {
+    width: 200px;
+    font-size: 16px;
+  }
+  .button-group-1 {
+    position: static;
+    transform: none;
+    right: none;
+  }
+  .inner-div .button-group-1 {
+    margin-top: 20px;
+  }
+}

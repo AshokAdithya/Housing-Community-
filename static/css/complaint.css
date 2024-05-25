@@ -82,3 +82,31 @@ textarea {
   width: 220px;
   align-self: center;
 }
+
+@media (max-width: 450px) {
+  .outer-div {
+    width: 85%;
+  }
+
+  h1 {
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+
+  label {
+    font: 18px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    width: 300px;
+  }
+
+  .button {
+    width: 200px;
+    font-size: 18px;
+    margin-top: 50px;
+  }
+}

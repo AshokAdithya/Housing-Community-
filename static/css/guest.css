@@ -10,7 +10,7 @@
 html,
 body {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-color: #222831;
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@ body {
   text-align: center;
 }
 
-.inner-div {
+.table-div {
   height: 450px;
   width: 100%;
   overflow-y: auto;
@@ -98,4 +98,61 @@ h2 {
   font-weight: 500;
   cursor: pointer;
   width: 320px;
+}
+
+@media (max-width: 450px) {
+  .outer-div {
+    width: 85%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 18px;
+    text-align: center !important;
+    margin-bottom: 20px;
+  }
+
+  .table-div {
+    width: 300px !important;
+    height: auto;
+    overflow-x: auto;
+    margin-bottom: 50px;
+  }
+  table {
+    width: auto;
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .contact-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .whatsapp-button,
+  .call-button {
+    width: 250px;
+    font-size: 16px;
+    padding: 10px 30px;
+  }
+  .contact {
+    margin-top: 0px;
+    gap: 25px;
+  }
+  .contact h2 {
+    text-align: center !important;
+    font-size: 16px;
+  }
+  .contact h2 span {
+    font-size: 18px;
+    font-weight: 800px;
+    text-align: center !important;
+  }
 }
