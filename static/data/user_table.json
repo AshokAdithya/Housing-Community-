@@ -1,38 +1,54 @@
 {
-  "G2": {
+  "D-101": {
     "details": {
-      "flat_no": "G2",
-      "resident_name": "Ashwin",
-      "resident_number": "9876543210",
-      "email_address": "ashwin@gmail.com",
-      "owner_name": "Ashwin",
-      "owner_number": "9876543210",
+      "flat_no": "D-101",
+      "resident_name": "Veda",
+      "resident_number": "9818357707",
+      "email_address": "veda@xmailcom",
+      "owner_name": "Ishaan",
+      "owner_number": "9384114447",
       "status": "Unavailable",
-      "no_of_residents": 3,
-      "no_of_vehicles": 2,
-      "no_of_pets": 2,
-      "BHK": 2,
-      "maintenance_fee": 400,
+      "no_of_residents": 7,
+      "no_of_vehicles": 3,
+      "no_of_pets": 0,
+      "BHK": 4,
+      "maintenance_fee": 12500,
       "payment_status": "Unpaid"
     },
-    "password": "password2"
+    "password": "password101"
   },
-  "G1": {
-    "password": "password1",
+  "D-102": {
+    "password": "password102",
     "details": {
-      "flat_no": "G1",
-      "resident_name": "Ashok Adithya",
-      "resident_number": "6379258841",
-      "email_address": "ashokadithya235@gmail.com",
-      "owner_name": "Senthil",
-      "owner_number": "9423423134",
+      "flat_no": "D-102",
+      "resident_name": "Aishwarya",
+      "resident_number": "9368305244",
+      "email_address": "aishwarya@xmail.com",
+      "owner_name": "Aishwarya",
+      "owner_number": "9368305244",
       "status": "Unavailable",
-      "no_of_residents": 3,
-      "no_of_vehicles": 3,
-      "no_of_pets": 1,
-      "BHK": 3,
+      "no_of_residents": 4,
+      "no_of_vehicles": 1,
+      "no_of_pets": 0,
+      "BHK": 4,
       "maintenance_fee": 12400,
       "payment_status": "Unpaid"
     }
-  }
+  }, 
+  "D-102": {
+    "password": "password102",
+    "details": {
+      "flat_no": "D-102",
+      "resident_name": "Aishwarya",
+      "resident_number": "9368305244",
+      "email_address": "aishwarya@xmail.com",
+      "owner_name": "Aishwarya",
+      "owner_number": "9368305244",
+      "status": "Unavailable",
+      "no_of_residents": 4,
+      "no_of_vehicles": 1,
+      "no_of_pets": 0,
+      "BHK": 4,
+      "maintenance_fee": 12400,
+      "payment_status": "Unpaid"
 }
