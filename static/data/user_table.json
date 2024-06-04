@@ -177,4 +177,43 @@
       "BHK": 4,
       "maintenance_fee": 12400,
       "payment_status": "Unpaid"
+    }
+  },
+    "D-601": {
+    "password": "password601",
+    "details": {
+      "flat_no": "D-601",
+      "resident_name": Nirav,
+      "resident_number": "9852602327",
+      "email_address": "nirav@xmail.com",
+      "owner_name": "Muhammad",
+      "owner_number": "9205062026",
+      "status": "Unvailable",
+      "no_of_residents": 2,
+      "no_of_vehicles": 1,
+      "no_of_pets": 1,
+      "BHK": 4,
+      "maintenance_fee": 12400,
+      "payment_status": "Unpaid"
+    }
+  },
+  
+    "D-602": {
+    "password": "password602",
+    "details": {
+      "flat_no": "D-602",
+      "resident_name": Shreya,
+      "resident_number": "9309796646",
+      "email_address": "shreya@xmail.com",
+      "owner_name": "Shreya",
+      "owner_number": "9309796646",
+      "status": "Unvailable",
+      "no_of_residents": 4,
+      "no_of_vehicles": 2,
+      "no_of_pets": 0,
+      "BHK": 4,
+      "maintenance_fee": 12400,
+      "payment_status": "Unpaid"
+    }
+  },
 }
